@@ -50,3 +50,8 @@ lib/
 # Truffle specific
 migrations/*.js
 test/*.js
+
+.deps/
+*.deps
+
+package-lock.json

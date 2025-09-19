@@ -1,0 +1,26 @@
+{
+  "name": "auto-vault-protocol",
+  "version": "1.0.0",
+  "description": "auto-vault-protocol",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yijin840/auto-vault-protocol.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yijin840/auto-vault-protocol/issues"
+  },
+  "homepage": "https://github.com/yijin840/auto-vault-protocol#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
+  }
+}
