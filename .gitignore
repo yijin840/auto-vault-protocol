@@ -1,5 +1,13 @@
-# Solidity / Ethereum project
+# Hardhat / Foundry specific
+/artifacts/
+/cache/
 
+# Environment variables and secrets
+# 这部分很重要，确保你的私钥不会被上传
+.env
+
+
+# Solidity / Ethereum project
 # Compiled output
 /artifacts/
 /build/
@@ -55,3 +63,4 @@ test/*.js
 *.deps
 
 package-lock.json
+
