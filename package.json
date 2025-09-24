@@ -1,38 +1,23 @@
 {
   "name": "auto-vault-protocol",
   "version": "1.0.0",
-  "description": "auto-vault-protocol",
+  "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy_trc20.js --network shasta"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yijin840/auto-vault-protocol.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yijin840/auto-vault-protocol/issues"
-  },
-  "homepage": "https://github.com/yijin840/auto-vault-protocol#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^5.4.0",
-    "nvm": "^0.0.4",
-    "tronweb": "^6.0.4"
+    "dotenv": "^16.6.1",
+    "tronweb": "^3.2.7"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-ignition": "^3.0.3",
-    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
-    "@types/node": "^22.18.6",
-    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
-    "hardhat": "^3.0.6",
-    "typescript": "~5.8.0",
-    "viem": "^2.37.8"
-  },
-  "type": "module"
+    "@nomiclabs/hardhat-waffle": "2.0.3",
+    "chai": "4.3.7",
+    "ethereum-waffle": "3.4.4",
+    "forge-std": "^1.1.2",
+    "hardhat": "2.16.1",
+    "solc": "^0.8.20"
+  }
 }
