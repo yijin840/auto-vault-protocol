@@ -1,7 +1,8 @@
 // deploy.js
 
-const hre = require('hardhat');
-const TronWeb = require('tronweb');
+import hre from "hardhat";
+import { TronWeb } from 'tronweb';
+
 
 async function main() {
     console.log('正在准备部署...');
@@ -23,13 +24,13 @@ async function main() {
     console.log('开始部署合约...');
 
     // 1. 部署 Vault 逻辑合约
-    const Vault = await hre.ethers.getContractFactory('Vault');
+    const Vault = await ethers.getContractFactory('Vault');
     const vault = await Vault.deploy();
     await vault.deployed();
     console.log(`\n✅ Vault 合约已部署到: ${vault.address}`);
   
     // 2. 部署 ProxyFactory 合约
-    const ProxyFactory = await hre.ethers.getContractFactory('ProxyFactory');
+    const ProxyFactory = await ethers.getContractFactory('ProxyFactory');
     const proxyFactory = await ProxyFactory.deploy(vault.address);
     await proxyFactory.deployed();
     console.log(`✅ ProxyFactory 合约已部署到: ${proxyFactory.address}`);
