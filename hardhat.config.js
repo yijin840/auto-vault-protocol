@@ -1,17 +1,19 @@
-require("@nomiclabs/hardhat-waffle");
-require("dotenv").config();
-const path = require("path");
+// 修改后的硬合约配置 (hardhat.config.js)
 
-module.exports = {
+import "@nomicfoundation/hardhat-toolbox";
+import "dotenv/config"; // 使用 "dotenv/config" 来在 ES 模块中加载环境变量
+import path from "path";
+
+export default {
   solidity: {
     compilers: [
       {
-        version: "0.8.30",        // 使用系统已安装的 0.8.30
+        version: "0.8.28", // 使用系统已安装的 0.8.28
       },
     ],
     external: {
       compiler: {
-        path: path.resolve("/opt/homebrew/bin/solc"), // 本地 solc 路径
+        path: "/opt/homebrew/bin/solc", // 直接使用字符串路径
       },
     },
   },

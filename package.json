@@ -5,19 +5,18 @@
   "main": "index.js",
   "scripts": {
     "compile": "npx hardhat compile",
-    "deploy": "npx hardhat run scripts/deploy_trc20.js --network shasta"
+    "deploy": "npx hardhat run scripts/deploy_trc20.js --network shasta",
+    "test": "npx hardhat test"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.4.0",
+    "@openzeppelin/contracts": "^4.9.6",
     "dotenv": "^16.6.1",
     "tronweb": "^3.2.7"
   },
   "devDependencies": {
-    "@nomiclabs/hardhat-waffle": "2.0.3",
-    "chai": "4.3.7",
-    "ethereum-waffle": "3.4.4",
-    "forge-std": "^1.1.2",
-    "hardhat": "2.16.1",
-    "solc": "^0.8.20"
-  }
+    "hardhat": "^2.26.0",
+    "solc": "^0.8.28",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0"
+  },
+  "type": "module"
 }
