@@ -64,3 +64,6 @@ test/*.js
 
 package-lock.json
 
+*.states
+.states/
+ignition/ 
