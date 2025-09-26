@@ -3,15 +3,20 @@ pragma solidity ^0.8.28;
 
 import "./interfaces/IVault.sol";
 import "./interfaces/IERC20.sol";
+
 // 逻辑合约
 contract Vault is IVault {
     address public owner;
+    bool private initialized;
 
     event Log(string message, address sender);
+    event Initialized(address owner);
 
     function initialize(address _owner) external {
-        require(owner == address(0), "already initialized");
+        require(!initialized, "Vault: already initialized");
         owner = _owner;
+        initialized = true;
+        emit Initialized(_owner);
     }
 
     // 提取指定数量的 ETH
@@ -25,7 +30,6 @@ contract Vault is IVault {
     // 提取指定数量的某个 ERC20
     function sweepERC20(address token, uint256 amount) external override {
         require(msg.sender == owner, "not owner");
-        // 调用 ERC20 的 transfer 方法
         (bool ok, bytes memory data) =
             token.call(abi.encodeWithSignature("transfer(address,uint256)", owner, amount));
         require(ok && (data.length == 0 || abi.decode(data, (bool))), "ERC20 transfer failed");

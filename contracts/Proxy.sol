@@ -4,9 +4,21 @@ pragma solidity ^0.8.28;
 // 代理合约（Minimal Proxy）
 contract Proxy {
     address public logic;
+    address public owner;
+    bool private initialized;
+
+    event Initialized(address owner);
 
     constructor(address _logic) {
         logic = _logic;
+    }
+
+    /// 初始化方法，只能调用一次
+    function initialize(address _owner) external {
+        require(!initialized, "Proxy: already initialized");
+        owner = _owner;
+        initialized = true;
+        emit Initialized(_owner);
     }
 
     // 接收普通 ETH 转账
@@ -25,4 +37,3 @@ contract Proxy {
         }
     }
 }
-
